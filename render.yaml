@@ -1,0 +1,17 @@
+# Render.com Deployment Configuration
+# This runs the GEX bot as a scheduled cron job
+
+services:
+  - type: cron
+    name: tradehawk-gex-bot
+    env: python
+    schedule: "30 9,12,15 * * 1-5"  # 9:30am, 12pm, 3pm ET on weekdays
+    buildCommand: pip install -r requirements.txt
+    startCommand: python gex_bot.py
+    envVars:
+      - key: DISCORD_WEBHOOK
+        sync: false  # Set this in Render dashboard
+      - key: SYMBOLS
+        value: SPY,QQQ,IWM,AAPL,TSLA,NVDA,AMD,GME,AMC
+      - key: TRADING_STYLE
+        value: swing
