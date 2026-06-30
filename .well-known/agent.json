@@ -1,0 +1,13 @@
+{
+  "name": "tradehawk-gex-bot",
+  "description": "TradeHawk GEX gamma exposure analysis bot",
+  "owner": "ScriptMasterLabs",
+  "github": "https://github.com/timwal78/tradehawk-gex-bot",
+  "contact": "scriptmasterlabs@gmail.com",
+  "sovereign": {
+    "noMockData": true,
+    "liveDataOnly": true,
+    "noTelemetry": true,
+    "enforcedBy": ".github/workflows/sovereign-data-check.yml"
+  }
+}
